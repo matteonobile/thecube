@@ -18,9 +18,10 @@ def load_data(uploaded_file=None):
     if uploaded_file is not None:
         # Read the file if uploaded by user in the sidebar
         df_raw = pd.read_csv(uploaded_file, header=None)
-    elif os.path.exists('Factor Exposures.xlsx - Sheet1.csv'):
+    elif os.path.exists('FactorExposures.csv'):
         # Read the local file if it exists
-        df_raw = pd.read_csv('Factor Exposures.xlsx - Sheet1.csv', header=None)
+        print("reading file")
+        df_raw = pd.read_csv('FactorExposures.csv', header=None)
     else:
         # Fallback data (based on your provided file) for robustness
         data = """
